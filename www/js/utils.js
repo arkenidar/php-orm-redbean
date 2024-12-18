@@ -32,10 +32,10 @@ function onSubmit(after = () => { }) {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            return response.text();
+            return response.text(); // or .json() or .blob() ...
         }).then(data => {
             /// console.log(data);
-            after();
+            after(data);
         }).catch(error => console.error('There was a problem with the fetch operation:', error));
 
     }

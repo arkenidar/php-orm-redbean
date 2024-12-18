@@ -15,16 +15,20 @@
         <input type="text" name="character_name" placeholder="Character" required>
         <input type="submit" name="add_character" value="add character">
     </form>
+    <pre id="log"></pre>
 
     <script src="../js/utils.js"></script>
     <script>
-        function loadFragmentMovieListing() {
-            loadFragmentInto('../fragment/movie-listing.php', 'div#movie-listing');
-        }
+    function loadFragmentMovieListing() {
+        loadFragmentInto('../fragment/movie-listing.php', 'div#movie-listing');
+    }
 
+    loadFragmentMovieListing();
+
+    $sel('form#add_character').onsubmit = onSubmit((data) => {
+        $sel('pre#log').innerText = data;
         loadFragmentMovieListing();
-
-        $sel('form#add_character').onsubmit = onSubmit(() => loadFragmentMovieListing());
+    });
     </script>
 </body>
 

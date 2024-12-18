@@ -17,7 +17,7 @@ if (isset($_REQUEST['movie_title']) && isset($_REQUEST['character_name'])) {
         R::store($movie_bean);
         echo "Character added\n";
     } else {
-        echo "Movie not found\n";
+        echo "Movie not found ('$movie_title')\n";
     }
 } else {
     echo "Malformed request, invalid input\n";
